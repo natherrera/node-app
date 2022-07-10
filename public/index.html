@@ -38,7 +38,7 @@
             const body = {id_token: response.credential}
             //Google token : ID_TOKEN
             console.log('ID_TOKEN:', response.credential)
-            fetch('http://localhost:8080/api/auth/google', {
+            fetch(`${window.location.href}api/auth/google` , {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,7 +47,6 @@
             })
             .then( resp => resp.json() )
             .then( resp => {
-                console.log(resp)
                 localStorage.setItem('email', resp.usuario.correo)
             } )
             .catch(console.warn)
