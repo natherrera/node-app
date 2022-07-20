@@ -37,7 +37,6 @@
 
             const body = {id_token: response.credential}
             //Google token : ID_TOKEN
-            console.log('ID_TOKEN:', response.credential)
             fetch(`${window.location.href}api/auth/google` , {
                 method: 'POST',
                 headers: {
